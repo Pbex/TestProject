@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		string contents = System.IO.File.ReadAllText(@"Assets\waves.json");//json数据文件的相对路径
+		string contents = System.IO.File.ReadAllText(@"Assets\Json\waves.json");//json数据文件的相对路径
 		//Debug.Log("contents = " + contents);
 		waves = JsonMapper.ToObject(contents)["waves"];//得到一个jsondata数组
 		//Debug.Log(waves);
