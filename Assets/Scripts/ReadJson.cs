@@ -33,7 +33,7 @@ public class ReadJson : MonoBehaviour {
 		XmlDocument xmlDocument = new XmlDocument();//新建一个XML“编辑器”  
 		dialogues_list = new List<string>();//初始化存放dialogues的list
 		//string data = System.IO.File.ReadAllText(@"Asset\TextUI.xml");
-		string data = Resources.Load(@"TextUI").ToString();
+		string data = Resources.Load(@"Data\TextUI").ToString();
 		xmlDocument.LoadXml(data);//载入这个xml  
 		XmlNodeList xmlNodeList = xmlDocument.SelectSingleNode("dialogues").ChildNodes;//选择<dialogues>为根结点并得到旗下所有子节点  
 		foreach (XmlNode xmlNode in xmlNodeList)//遍历<dialogues>下的所有节点<dialogue>压入List

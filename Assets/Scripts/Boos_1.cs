@@ -51,7 +51,7 @@ public class Boos_1 : LandMonster {
                 {
                     //如果当前没有施放技能，则根据当前状态选择技能
                     float distance = caculateTheDistance();
-                    Debug.Log("dis:" + distance);
+                    //Debug.Log("dis:" + distance);
                     if (distance < Near)
                     {
                         //就在Player附近
@@ -101,7 +101,7 @@ public class Boos_1 : LandMonster {
                     {
                         //非常遥远
                         float choose = Random.Range(0.0f, 1.0f);
-                        Debug.Log("choose:" + choose);
+                        //Debug.Log("choose:" + choose);
                         if (choose < 0.9f)
                         {
                             //冲刺攻击
@@ -161,7 +161,7 @@ public class Boos_1 : LandMonster {
         {
             //开始攻击
             SkillStatu = SkillStatus.Attack;
-            Debug.Log("attack!"); //执行攻击
+            //Debug.Log("attack!"); //执行攻击
             MonsterAnimator.SetTrigger("SwordAttack");            
             
         }
@@ -172,7 +172,7 @@ public class Boos_1 : LandMonster {
             if (animatorClipInfos[0].clip.name=="Idel")
             {
                 //已经攻击完毕
-                Debug.Log("攻击完毕！");
+                //Debug.Log("攻击完毕！");
                 SkillStatu = SkillStatus.Busy;
                 StartCoroutine(recoverFromSkill(3));
             }
@@ -187,7 +187,7 @@ public class Boos_1 : LandMonster {
     protected void dashAttack()
     {
         SkillStatu = SkillStatus.DashAttack;
-        Debug.Log("dashAttack!"); //执行冲刺、攻击
+        //Debug.Log("dashAttack!"); //执行冲刺、攻击
         SkillStatu = SkillStatus.Busy;
         StartCoroutine(recoverFromSkill(5));
     }
@@ -196,7 +196,7 @@ public class Boos_1 : LandMonster {
     protected void projectFire()
     {
         SkillStatu = SkillStatus.ProjectFire;
-        Debug.Log("projectFire!"); //执行动画，产生发射物
+        //Debug.Log("projectFire!"); //执行动画，产生发射物
         SkillStatu = SkillStatus.Busy;
         StartCoroutine(recoverFromSkill(4));
     }

@@ -52,10 +52,10 @@ public class PlayerOperation : MonoBehaviour
 			int t = v > 0 ? 1 : -1;
 			PlayerRd.velocity = new Vector3 (PlayerRd.velocity.x, 0,MoveSpeed*t);
 			playerState = state.run;
-		} else if (Input.GetMouseButton (0)) {
+		} else if (Input.GetMouseButton (0)) {//right click
 			playerState = state.clim;
 			isAttacking = true;
-		}else if (Input.GetMouseButton (1))
+		}else if (Input.GetMouseButton (2))
 			playerState = state.hurt;
 		else if(Input.GetMouseButtonUp(0))
 			isAttacking = false;

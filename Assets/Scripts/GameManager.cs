@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour {
 		{
 			JsonData monster = waves[OnGoingWave]["monster"];
 			float waveTime = (float)waves[OnGoingWave]["time"];
-			Debug.Log(waveTime);//这一波怪物持续的时间
+			//Debug.Log(waveTime);//这一波怪物持续的时间
 
 			Vector3 pos = new Vector3(9.5f, 0.0f, 15.0f);
 			Quaternion rot = Quaternion.Euler(0, 180, 0);
@@ -70,14 +70,19 @@ public class GameManager : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		string contents = System.IO.File.ReadAllText(@"Assets\Json\waves.json");//json数据文件的相对路径
-		//Debug.Log("contents = " + contents);
+		
+	}
+	
+	public void LoadMonster()
+	{
+		string contents = System.IO.File.ReadAllText(@"Assets\Resources\Data\waves.json");//json数据文件的相对路径
+																						  //Debug.Log("contents = " + contents);
 		waves = JsonMapper.ToObject(contents)["waves"];//得到一个jsondata数组
-		//Debug.Log(waves);
+													   //Debug.Log(waves);
 
 		StartCoroutine(CreateMethod());//生成怪物的协程，独立
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		

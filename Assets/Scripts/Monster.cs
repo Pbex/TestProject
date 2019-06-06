@@ -33,8 +33,9 @@ public class Monster : MonoBehaviour {
 
 
     void Start () {
-        //初始化赋值
-        GameManagerObject = GameObject.FindGameObjectsWithTag("GameManager")[0];
+		//初始化赋值
+		//health = 100.0f
+		GameManagerObject = GameObject.FindGameObjectsWithTag("GameManager")[0];
         GameManager = GameManagerObject.GetComponent<GameManager>();
         PlayerObject = GameManager.Player;
         TargetPlayer = PlayerObject.GetComponent<Player>();
@@ -57,12 +58,15 @@ public class Monster : MonoBehaviour {
     {
         if(alive)
         {
-            if (health < damage)
+            if (health <= damage)
             {
-                health = 0;  //血量清零
+				Debug.Log("health empty");
+				health = 0;  //血量清零
                 alive = false; //更新死亡状态
-                //播放死亡动画
-            }
+							   //播放死亡动画
+				Destroy(gameObject);
+				
+			}
             else
             {
                 health -= damage;
@@ -70,6 +74,7 @@ public class Monster : MonoBehaviour {
                 //播放受击动画
             }
         }
+		Debug.Log("damage receive: "+health);
         
     }
 }

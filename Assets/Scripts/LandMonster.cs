@@ -5,11 +5,10 @@ using UnityEngine;
 public class LandMonster : Monster
 {
 
-
-
 	// Use this for initialization
 	void Start () {
         //初始化赋值
+
         GameManagerObject = GameObject.FindGameObjectsWithTag("GameManager")[0];
         GameManager = GameManagerObject.GetComponent<GameManager>();
         PlayerObject = GameManager.Player;
@@ -20,6 +19,7 @@ public class LandMonster : Monster
         /*自身属性赋值*/
         MonsterAnimator = GetComponent<Animator>();
         MonsterTransform = GetComponent<Transform>();
+		
     }
 	
 	// Update is called once per frame
@@ -160,5 +160,5 @@ public class LandMonster : Monster
         direction = false;
     }
 
-
+	
 }
