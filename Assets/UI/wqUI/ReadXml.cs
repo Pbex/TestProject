@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System.Xml;
+using System.Text;
 
 public class ReadXml : MonoBehaviour {
 	public Text Speaker;
@@ -44,9 +45,10 @@ public class ReadXml : MonoBehaviour {
 	void Start () {
 		
 	}
-	
+
 	// Update is called once per frame
-	void Update () {
+	void Update()
+	{
 		if (Input.GetMouseButtonDown(0))//如果点击了鼠标左键
 		{
 			dialogue_index++;//对话跳到一下个
@@ -63,6 +65,66 @@ public class ReadXml : MonoBehaviour {
 			}
 		}
 	}
+	//string s;
+	//float speed = 0;
+	//// Update is called once per frame
+	//void Update()
+	//{
+	//	if (dialogue_index == 0)
+	//	{
+	//		string[] role_detail_array = dialogues_list[dialogue_index].Split(',');//list中每一个对话格式就是“角色名,对话”
+	//		role = role_detail_array[0];
+	//		role_detail = role_detail_array[1];
+
+	//		switch (role)//根据角色名
+	//		{   //显示当前说话的角色
+	//			case "阿伟：":
+	//				roleA.SetActive(true);
+	//				roleB.SetActive(false);
+	//				break;
+	//			case "Monster：":
+	//				roleB.SetActive(true);
+	//				roleA.SetActive(false);
+	//				break;
+	//		}
+	//		speed += Time.deltaTime;
+
+	//		Content.text = s.Substring(0, (int)speed + 1);
+	//		Speaker.text = role;
+	//		//Content.text = role_detail;//并加载当前的对话
+	//	}
+	//	if (Input.GetMouseButtonDown(0))//如果点击了鼠标左键
+	//	{
+	//		dialogue_index++;//对话跳到一下个
+	//		if (dialogue_index < dialogue_count)//如果对话还没有完
+	//		{
+	//			string[] role_detail_array = dialogues_list[dialogue_index].Split(',');//list中每一个对话格式就是“角色名,对话”
+	//			role = role_detail_array[0];
+	//			role_detail = role_detail_array[1];
+
+	//			switch (role)//根据角色名
+	//			{   //显示当前说话的角色
+	//				case "阿伟：":
+	//					roleA.SetActive(true);
+	//					roleB.SetActive(false);
+	//					break;
+	//				case "Monster：":
+	//					roleB.SetActive(true);
+	//					roleA.SetActive(false);
+	//					break;
+	//			}
+	//			Speaker.text = role;
+	//			Content.text = role_detail;//并加载当前的对话
+	//		}
+	//		else
+	//		{ //对话完了
+	//		  //进入下一游戏场景之类的
+	//			gameObject.SetActive(false);//隐藏对话框
+	//			Characters.SetActive(true);
+	//			manager.GetComponent<GameManager>().LoadMonster();
+	//		}
+	//	}
+	//}
 
 	/*处理每一条对话的函数，就是将dialogues_list每一条对话弄到场景*/
 	private void Dialogues_handle(int dialogue_index)

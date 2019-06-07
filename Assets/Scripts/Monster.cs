@@ -74,7 +74,7 @@ public class Monster : MonoBehaviour {
                 //播放受击动画
             }
         }
-		Debug.Log("damage receive: "+health);
+		Debug.Log("damage receive, remain health: "+health);
         
     }
 }
